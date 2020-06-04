@@ -12,8 +12,13 @@ const transactions = require("./routes/transactions")
 
 const app = express()
 
-// enables body parser
+// enables body parser for request.body.params
 app.use(express.json())
+
+// enables morgan middleware
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"))
+}
 
 app.use("/api/v1/transactions", transactions)
 

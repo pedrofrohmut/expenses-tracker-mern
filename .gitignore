@@ -9,3 +9,6 @@ package-lock.json
 
 # Env
 config/config.env
+
+# CLIENT
+client/**.*
